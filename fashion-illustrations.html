@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fashion illustrations</title>
+    <link rel="stylesheet" type="text/css" href="./port.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <section>
+      <span style="font-size:30px;cursor:pointer; position: relative; top:40px; left:20px;" onclick="openNav()">Portfolio</span>
+        <section class="heading-section__2 panel">
+          <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+            <div class="overlay-content">
+              <a href="./judgement.html">The Last Judgement</a>
+              <a href="./poster-design.html">Poster Design</a>
+              <a href="./flakes.html">Pattern</a>
+              <a href="./synestesia.html">Girl in the Mirror</a>
+              <a href="./fashion-illustrations.html">Fashion Illustration</a>
+              <a href="./digital.html">Digital Design</a>
+              <a href="./bid.html">The BID</a>
+              <a href="#">Product Design</a>
+            </div>
+          </div>
+            
+        </section>
+        <div class="container-10 panel" data-color="violet">
+            <div class="row-none">
+                <img src="./img/2+.png  ">
+                <img src="./img/3 (1).png">
+                <img src="./img/+1.png">
+                <img src="./img/1 (3).png">
+                <img src="./img/5 (1).png">
+                <img src="./img/7 (1).png">
+            </div>
+        </div>
+    </section>
+    <script>
+        $(window).scroll(function() {
+
+// selectors
+var $window = $(window),
+  $body = $('body'),
+  $panel = $('.panel');
+
+// Change 33% earlier than scroll position so colour is there when you arrive.
+var scroll = $window.scrollTop() + ($window.height() / 3);
+
+$panel.each(function () {
+var $this = $(this);
+
+// if position is within range of this panel.
+// So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+// Remember we set the scroll to 33% earlier in scroll var.
+if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+      
+  // Remove all classes on body with color-
+  $body.removeClass(function (index, css) {
+    return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+  });
+   
+  // Add class of currently active div
+  $body.addClass('color-' + $(this).data('color'));
+}
+});    
+
+}).scroll();
+    </script>
+    <script>
+      function openNav() {
+document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+document.getElementById("myNav").style.width = "0%";
+}
+  </script>
+</body>
+</html>

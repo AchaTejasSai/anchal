@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+        <link rel="stylesheet" href="./port.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <span style="font-size:30px;cursor:pointer; position: relative; top:40px; left:20px;" onclick="openNav()">Portfolio</span>
+        <section class="heading-section__1 panel">
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+                <div class="overlay-content">
+                  <a href="./judgement.html">The Last Judgement</a>
+                  <a href="./poster-design.html">Poster Design</a>
+                  <a href="./flakes.html">Pattern</a>
+                  <a href="./synestesia.html">Girl in the Mirror</a>
+                  <a href="./fashion-illustrations.html">Fashion Illustration</a>
+                  <a href="./digital.html">Digital Design</a>
+                  <a href="./bid.html">The BID</a>
+                  <a href="#">Product Design</a>
+                </div>
+              </div>
+            <div class="heading-name">
+                <h1 class="heading-name__project">THE LAST JUDGEMENT</h1>  
+            </div>
+            
+        </section>
+        <section class="data-third panel" data-color="black">
+            <div class="data">
+                <div class="para-judge__block">
+                    <p class="para-judge">
+                        Michelangelo’s Last Judgment is among the most powerful rendition in the history of Christian art. 
+                        It has over 300 muscular figures in an organized composition, on the wall behind the altar in the 
+                        Sistine Chapel. It was an honor replicating a small part of such a splendid masterpiece. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="data-sec panel" data-color="black">
+            <div class="main-img__block">
+                <div class="data-img">
+                    <div class="img-1">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            
+            <div class="replicate">
+                <h1>This is my attempt at replicating  a part of 
+                    The Last Judgement by Michelangelo</h1>
+            </div>
+            <div class="main-img__block">
+                <div class="data-img">
+                    <div class="img-2">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            
+            
+        </section>
+        <script>
+            $(window).scroll(function() {
+  
+  // selectors
+  var $window = $(window),
+      $body = $('body'),
+      $panel = $('.panel');
+  
+  // Change 33% earlier than scroll position so colour is there when you arrive.
+  var scroll = $window.scrollTop() + ($window.height() / 3);
+ 
+  $panel.each(function () {
+    var $this = $(this);
+    
+    // if position is within range of this panel.
+    // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+    // Remember we set the scroll to 33% earlier in scroll var.
+    if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+          
+      // Remove all classes on body with color-
+      $body.removeClass(function (index, css) {
+        return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+      });
+       
+      // Add class of currently active div
+      $body.addClass('color-' + $(this).data('color'));
+    }
+  });    
+  
+}).scroll();
+        </script>
+        
+        <script>
+            function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+        </script>
+    </body>
+</html>
